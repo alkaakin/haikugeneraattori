@@ -5,6 +5,11 @@ Tietokantasovellus Helsingin yo:n TKT-laitoksen tietokantasovelluskurssia varten
 
 Sovellus antaa käyttäjälle mahdollisuuden tallettaa uusia haikuja ja generoida haikuja “satunnaisesti” vanhojen, jo tallennettujen haikujen avulla. Sovellus mahdollistaa lisäksi kaikkien haikujen katselun ja niiden arvostelun. 
 
+<b> Sovelluksen käyttäjäluokat </b>
+- Superkäyttäjä (oikeus kirjoittaa haikuja, generoida haikuja, arvostella haikuja ja poistaa haikuja) 
+- Kirjautunut käyttäjä (oikeus kirjoittaa haikuja, generoida haikuja ja arvostella haikuja)
+- Ei-kirjautunut käyttäjä (oikeus generoida haikuja)
+
 <b> Sovelluksen ominaisuuksia </b>
 - Sovelluksessa on kirjautumis/rekisteröitymisruutu. 
 - Kirjautuminen tarvitaan haikun kirjoittamiseksi ja arvostelemiseksi.
