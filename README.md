@@ -1,7 +1,7 @@
 
 <i>Tietokantasovellus Helsingin yo:n TKT-laitoksen tietokantasovelluskurssia varten</i>
 
-# <b>Haikugeneraattori</b> :penguin:
+# :penguin: <b>Haikugeneraattori</b> :penguin:
 
 Sovellus antaa käyttäjälle mahdollisuuden tallettaa uusia haikuja ja generoida haikuja “satunnaisesti” vanhojen, jo tallennettujen haikujen avulla. Sovellus mahdollistaa lisäksi kaikkien haikujen katselun ja niiden arvostelun. 
 
