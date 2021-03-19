@@ -1,4 +1,4 @@
-# tsoha
+# tsoha :beginner:
 Tietokantasovellus Helsingin yo:n TKT-laitoksen tietokantasovelluskurssia varten
 
 <b>Haikugeneraattori</b>
