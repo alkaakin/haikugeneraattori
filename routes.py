@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, request, redirect
-import haikut
+import haikut, users
 #import messages, users -> Pitää siis importtaa ne moduulit, joita tässä erikseen tarvitaan
 
 @app.route("/")
@@ -15,14 +15,14 @@ def login():
         #return render_template("login.html")
     #oletan että request methodia GET ei tarvii merkitä tähän    
     if request.method == "POST":
-        return render_template("error.html",message="Väärä tunnus tai salasana")
-        #username = request.form["username"]
-        #password = request.form["password"]
-        #if users.login(username,password):
-            #return redirect("/")
-            #eli ylläolevaa varten tulee ottaa käyttöön userstaulu
-        #else:
         #return render_template("error.html",message="Väärä tunnus tai salasana")
+        username = request.form["username"]
+        password = request.form["password"]
+        if users.login(username,password):
+            return redirect("/kirjautunut")
+            #eli ylläoleva ohjaa takaisin etusivulle
+        else:
+            return render_template("error.html",message="Väärä tunnus tai salasana")
         #huom. pitäisi olla niin, että kirjautumisen jälkeen palaa suoraan takaisin etusivulle
         # ja että kirjautumisen jälkeen etusivulla ei enää ole kirjautumisruutua
         #
@@ -31,3 +31,8 @@ def login():
 def haiku():
     list = haikut.get_list()
     return render_template("haikut.html", haikut=list)
+
+
+@app.route("/kirjautunut")
+def kirjautunut():
+    return render_template("loggedindex.html")
