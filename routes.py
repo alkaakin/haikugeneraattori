@@ -1,26 +1,25 @@
 from app import app
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, session
 import haikut, users
+from os import getenv
 #import messages, users -> Pitää siis importtaa ne moduulit, joita tässä erikseen tarvitaan
 
 @app.route("/")
 def index():
-    return render_template("index.html")
-    #tästä pitää tehdä suoraan kirjautumisruutu, ks. apuja chatmasterista
 
-@app.route("/login", methods=["post", "get"]) #tästä otettu pois get metodeista
-#ylläolevaa ei tarvitse muuttaa
+    return render_template("index.html")
+  
+
+@app.route("/login", methods=["GET", "POST"]) 
 def login():
-    #if request.method == "GET":
-        #return render_template("login.html")
+    if request.method == "GET":
+        return render_template("login.html")
     #oletan että request methodia GET ei tarvii merkitä tähän    
     if request.method == "POST":
-        #return render_template("error.html",message="Väärä tunnus tai salasana")
         username = request.form["username"]
         password = request.form["password"]
         if users.login(username,password):
-            return redirect("/kirjautunut")
-            #eli ylläoleva ohjaa takaisin etusivulle
+            return redirect("/")
         else:
             return render_template("error.html",message="Väärä tunnus tai salasana")
         #huom. pitäisi olla niin, että kirjautumisen jälkeen palaa suoraan takaisin etusivulle
@@ -33,6 +32,15 @@ def haiku():
     return render_template("haikut.html", haikut=list)
 
 
-@app.route("/kirjautunut")
-def kirjautunut():
-    return render_template("loggedindex.html")
+@app.route("/new")
+def newhaiku():
+    return render_template("new.html")
+
+@app.route("/send", methods=["post"])
+def send():
+    content = request.form["content"]
+    if haikut.send(content):
+        return redirect("/")
+    else:
+        return render_template("error.html",message="Viestin lähetys ei onnistunut")
+

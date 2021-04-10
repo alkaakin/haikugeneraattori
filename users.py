@@ -9,12 +9,13 @@ def login(username,password):
     if user == None:
         return False
     else:
-        #if user[1] == 'admin': 
-        #check_password_hash(user[0],password):
-            #session["user_id"] = user[1]
-        return True
-        #else:
-            #return False
+        #if check_password_hash(user[0],password):
+        if password == user[0]:
+            session["user_id"] = user[1]
+            #muuta ylläoleva myöhemmin hashvalueksi, nyt yksinkertaisuuden vuoksi hash
+            return True
+        else:
+            return False
 
 def logout():
     del session["user_id"]

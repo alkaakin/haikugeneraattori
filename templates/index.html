@@ -15,29 +15,59 @@
        h1 {color: black;}
        body {font-family: "Comic Sans MS", "Comic Sans", cursive;}
        
+       .button {
+        background-color: #000000;
+        color: #FFFFFF;
+        padding: 10px;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        margin:10px
+    }
+    
+    .small-btn {
+        width: 50px;
+        height: 25px;
+    }
+    
+    .medium-btn {
+        width: 70px;
+        height: 30px;
+    }
+    
+    .big-btn {
+        width: 90px;
+        height: 40px;
+    }
 
    </style> 
 </head>
 
 <body>
+  {% if session.user_id %}
+  <p>Olet kirjautunut sisään.</p>
   <h1>Haikugeneraattori</h1>
   <nav>
     <ul>
       <li><a href="/haikut">Tarkastele haikuja</a></li> 
       <! -- eli tähän tulisi jotenkin saada kirjautumisruutu sekä mahdollisuus tutkia haikuja -->
-      <li><a href="/uusi">Kirjoita haiku</a></li>
+      <li><a href="/new">Kirjoita haiku</a></li>
       <! -- jos ei ole kirjautunut sisään, ohjaa virhesivulle, josta pääsee takaisin etusivulle-->
-      <li><a href="/register">Rekisteröidy</a></li>
+      <li><a href="/logout">Kirjaudu ulos</a></li>
     </ul>
-  </nav>
 
-  <form action="/login" method="POST">
-    <label for="username">Tunnus:  </label>
-    <input type="text" name="username"><br>
-    <label for="password">Salasana:</label>
-    <input type="password" name="password"><br>
+    <h2><div class="button" style="width:60px;height:30px;"><button type="big-btn">HAIKU!</button></div></h2>
+  </nav>
+  {% else %}
+  <form action="/login" method="post">
+    Tunnus: <input type="text" name="username">
+    <p>
+    Salasana: <input type="password" name="password">
+    <p>
     <input type="submit" value="Kirjaudu">
-  </form>
+    </form>
+    Jos sinulla ei ole tunnusta, voit luoda uuden tunnuksen <a href="/register">tästä</a>
+  {% endif %}
 
   <h2>Tervetuloa Haikugeneraattoriin!</h2>
 
@@ -49,5 +79,7 @@
 	elementum eu id lorem. Morbi varius nulla at dui suscipit porta. Maecenas volutpat euismod leo, sit amet
 	venenatis sapien rutrum sit amet.
   </p>
+
+  
 </body>
 </html>
