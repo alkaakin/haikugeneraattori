@@ -13,40 +13,35 @@
        }
        body {color: black;}
        h1 {color: black;}
-       body {font-family: "Comic Sans MS", "Comic Sans", cursive;}
+       body {font-family: "Arial, Helvetica, sans-serif;
+       }
        
        .button {
         background-color: #000000;
         color: #FFFFFF;
-        padding: 10px;
-        border-radius: 10px;
-        -moz-border-radius: 10px;
-        -webkit-border-radius: 10px;
+        padding: 20px;
+        font-size: 20px;
+        border-radius: 20px;
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
+        font-family: fantasy;
         margin:10px
     }
+
+      .button:hover {
+        background-color: white;
+        color:crimson;
+      }
     
-    .small-btn {
-        width: 50px;
-        height: 25px;
-    }
-    
-    .medium-btn {
-        width: 70px;
-        height: 30px;
-    }
-    
-    .big-btn {
-        width: 90px;
-        height: 40px;
-    }
 
    </style> 
 </head>
 
 <body>
   {% if session.user_id %}
+  
+  <h1>Tervetuloa Haikugeneraattoriin!</h1>
   <p>Olet kirjautunut sisään.</p>
-  <h1>Haikugeneraattori</h1>
   <nav>
     <ul>
       <li><a href="/haikut">Tarkastele haikuja</a></li> 
@@ -55,8 +50,8 @@
       <! -- jos ei ole kirjautunut sisään, ohjaa virhesivulle, josta pääsee takaisin etusivulle-->
       <li><a href="/logout">Kirjaudu ulos</a></li>
     </ul>
-
-    <a href="/generoi" class="button">HAIKU TIME</a>
+    <br>
+    
   </nav>
   {% else %}
   <form action="/login" method="post">
@@ -66,18 +61,17 @@
     <p>
     <input type="submit" value="Kirjaudu">
     </form>
-    Jos sinulla ei ole tunnusta, voit luoda uuden tunnuksen <a href="/register">tästä</a>
-  {% endif %}
+    Jos sinulla ei ole tunnusta, voit luoda uuden tunnuksen <a href="/register">tästä!</a>
+    <br><br><br>
+    {% endif %}
 
-  <h2>Tervetuloa Haikugeneraattoriin!</h2>
 
+  <a href="/generoi" class="button">HAIKU TIME</a>
+  <! -- kuinka generoida tähän haiku? -->
+
+    <br>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum suscipit libero non urna facilisis, quis
-	eleifend enim ullamcorper. Vivamus bibendum ex dolor. Maecenas a felis non odio pellentesque aliquet.
-	Curabitur nibh velit, vehicula et semper in, ultricies et ipsum. Morbi efficitur, purus eget fringilla
-	mollis, lacus arcu dignissim ante, ut mollis arcu ex eget tortor. Donec non massa sit amet arcu varius
-	elementum eu id lorem. Morbi varius nulla at dui suscipit porta. Maecenas volutpat euismod leo, sit amet
-	venenatis sapien rutrum sit amet.
+    
   </p>
 
   

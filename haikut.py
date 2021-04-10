@@ -7,10 +7,10 @@ def get_list():
     result = db.session.execute(sql)
     return result.fetchall()
 
-def send(content):
+def send(nimi, genre, content):
     
-    sql = "INSERT INTO haikut (content) VALUES (:content)"
-    db.session.execute(sql, {"content":content})
+    sql = "INSERT INTO haikut (nimi,genre,content) VALUES (:nimi,:genre,:content)"
+    db.session.execute(sql, {"nimi":nimi, "genre":genre, "content":content})
     db.session.commit()
     return True
 

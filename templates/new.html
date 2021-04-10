@@ -1,9 +1,23 @@
 <form action="/send" method="post">
     
+    Haikun nimi:
+    <br>
+    <textarea name="nimi" rows="1" cols="40"></textarea>
+    <br>
     
-    
+    <br><label for="genre">Valitse genre:</label>
+    <select name="genre" id="genre">
+      <option value="scifi">Sci-fi</option>
+      <option value="romantiikka">Romantiikka</option>
+      <option value="kauhu">Kauhu</option>
+      <option value="kitsch">Kitsch</option>
+      <option value="realismi">Realismi</option>
+    </select>
+
+    <br> <br>
+
     Kirjoita haiku: <br>
     <textarea name="content" rows="3" cols="40"></textarea>
-    <br>
+    <br><br>
     <input type="submit" value="Lähetä">
     </form>
