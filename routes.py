@@ -5,8 +5,6 @@ from os import getenv
 from flask import Flask, jsonify, abort, make_response, request, url_for
 import random
 
-#import messages, users -> Pitää siis importtaa ne moduulit, joita tässä erikseen tarvitaan
-
 @app.route("/")
 def index():
 
@@ -16,8 +14,7 @@ def index():
 @app.route("/login", methods=["GET", "POST"]) 
 def login():
     if request.method == "GET":
-        return render_template("login.html")
-    #oletan että request methodia GET ei tarvii merkitä tähän    
+        return render_template("login.html")   
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
@@ -25,9 +22,7 @@ def login():
             return redirect("/")
         else:
             return render_template("error.html",message="Väärä tunnus tai salasana")
-        #huom. pitäisi olla niin, että kirjautumisen jälkeen palaa suoraan takaisin etusivulle
-        # ja että kirjautumisen jälkeen etusivulla ei enää ole kirjautumisruutua
-        #
+       
 
 @app.route("/logout")
 def logout():
@@ -37,12 +32,7 @@ def logout():
 @app.route("/generoi")
 def generoi():
     list = haikut.generoi()
-    #random = rnd_choice(list)
-    #list.clear()
-    #list.append(random)
     return render_template("generoi.html", random=list)
-    #arvotaan haiku
-    #
 
 
 @app.route("/haikut")
