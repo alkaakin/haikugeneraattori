@@ -16,7 +16,7 @@ Sovellus antaa käyttäjälle mahdollisuuden tallettaa uusia haikuja ja generoid
 - Haikuja on mahdollista arpoa ja tarkastella kirjautumatta.
 - Vain superkäyttäjä voi poistaa jo tehtyjä haikuja.
 - Sovellukseen voi syöttää haikun. Haiku syötetään tavuina, jotta varmistutaan sen haikuluonteesta.
-- Haikun syöttämisen yhteydessä valitaan haikun genre (sci-fi, kauhu, romanttinen, kitch, realismi)
+- Haikun syöttämisen yhteydessä valitaan haikun genre (sci-fi, kauhu, romanttinen, kitsch, realismi)
 - Kaikkia haikuja voi tarkastella erillisellä sivullaan. Ne voi myös arvostella tähdillä 1-5. 
 - Haikuja voi tutkia käyttäjäkohtaisesti tai genren perusteella
 
