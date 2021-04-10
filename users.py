@@ -17,6 +17,9 @@ def login(username,password):
         else:
             return False
 
+
+
+
 def logout():
     del session["user_id"]
 

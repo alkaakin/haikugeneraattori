@@ -2,6 +2,9 @@ from app import app
 from flask import render_template, request, redirect, session
 import haikut, users
 from os import getenv
+from flask import Flask, jsonify, abort, make_response, request, url_for
+import random
+
 #import messages, users -> Pitää siis importtaa ne moduulit, joita tässä erikseen tarvitaan
 
 @app.route("/")
@@ -25,6 +28,22 @@ def login():
         #huom. pitäisi olla niin, että kirjautumisen jälkeen palaa suoraan takaisin etusivulle
         # ja että kirjautumisen jälkeen etusivulla ei enää ole kirjautumisruutua
         #
+
+@app.route("/logout")
+def logout():
+    users.logout()
+    return redirect("/")
+
+@app.route("/generoi")
+def generoi():
+    list = haikut.generoi()
+    #random = rnd_choice(list)
+    #list.clear()
+    #list.append(random)
+    return render_template("generoi.html", random=list)
+    #arvotaan haiku
+    #
+
 
 @app.route("/haikut")
 def haiku():
