@@ -10,5 +10,5 @@ CREATE TABLE haikut (
     arvosana INTEGER,
     genre TEXT,
     visible INTEGER,
-    content TECT
+    content TEXT
 );
