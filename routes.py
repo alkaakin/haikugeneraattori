@@ -32,8 +32,8 @@ def logout():
 @app.route("/generoi")
 def generoi():
     list = haikut.generoi()
-    return render_template("generoi.html", random=list)
-
+    return render_template("startest.html", random=list)
+    #generoi korvattu startestillä testailun vuoksi
 
 @app.route("/haikut")
 def haiku():
