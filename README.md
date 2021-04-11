@@ -3,6 +3,8 @@
 
 # <b>Haikugeneraattori</b> :penguin:
 
+## <b> https://haiku-generaattori.herokuapp.com/ </b>
+
 Sovellus antaa käyttäjälle mahdollisuuden tallettaa uusia haikuja ja generoida haikuja “satunnaisesti” vanhojen, jo tallennettujen haikujen avulla. Sovellus mahdollistaa lisäksi kaikkien haikujen katselun ja niiden arvostelun. 
 
 ## <b> Sovelluksen käyttäjäluokat </b>
