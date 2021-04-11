@@ -1,7 +1,7 @@
 
 <i>Tietokantasovellus Helsingin yo:n TKT-laitoksen tietokantasovelluskurssia varten</i>
 
-# <b>Haikugeneraattori</b> :penguin:
+# <b>Haikugeneraattori</b> :japanese_castle:
 
 ## <b> https://haiku-generaattori.herokuapp.com/ </b>
 
