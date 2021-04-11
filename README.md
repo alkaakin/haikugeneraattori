@@ -18,8 +18,8 @@ Sovellusta tullaan kehittämään seuraavilla tavoin seuraavaan kurssin deadline
 - Eri käyttäjäryhmien luominen ja tunnistaminen
 - Ulkoasun parantaminen 
 - Haikujen generoiminen suoraan etusivulle sen sijaan, että sovellus näyttää haikun erillisellä sivulla
-- Mahdollisuus arvostella haikuja kirjautuneena
-- Mahdollisuus hakea haikuja eri parametrien avulla ja järjestää haikujen listausta
+- Mahdollisuus arvostella (generoitua) haikua
+- Mahdollisuus hakea haikuja eri parametrien avulla ja järjestää haikujen listausta (esim. arvosanan mukaan)
 
 
 <b> TAVOITE SOVELLUKSELLE </b>
