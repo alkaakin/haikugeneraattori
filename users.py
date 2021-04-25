@@ -9,10 +9,8 @@ def login(username,password):
     if user == None:
         return False
     else:
-        #if check_password_hash(user[0],password):
-        if password == user[0]:
+        if check_password_hash(user[0],password):
             session["user_id"] = user[1]
-            #muuta ylläoleva myöhemmin hashvalueksi, nyt yksinkertaisuuden vuoksi hash
             return True
         else:
             return False
@@ -24,8 +22,7 @@ def register(username,password):
     hash_value = generate_password_hash(password)
     try:
         sql = "INSERT INTO users (username,password) VALUES (:username,:password)"
-        db.session.execute(sql, {"username":username,"password":password})
-        #lisää myöhemmin hashvalue
+        db.session.execute(sql, {"username":username,"password":hash_value})
         db.session.commit()
     except:
         return False

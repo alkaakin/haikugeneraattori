@@ -1,11 +1,45 @@
-<hr>
-{% for haiku in haikut %}
-<i>Haiku:</i> {{ haiku[1] }}
-<p>
-<i>Arvosana:</i> {{ haiku[2] }}
-<p>
-<i>Genre:</i> {{ haiku[3] }}
-<p>
-<i>Sisältö: </i> {{haiku[5] }}
-<hr>
-{% endfor %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <h1>
+        <title> Kaikki haikut </title>
+    </h1>
+</head>
+<style>
+    body {
+        
+        background-image: url("/static/haiku2.jpeg");
+           background-repeat: no-repeat;
+           background-size: cover;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-style: inherit;
+        font-size: 12px;
+    }
+
+    
+
+    h2 {
+        color: navy;
+        margin-left: 0px;
+    }
+</style>
+
+<body>
+    <h2> Tarkastele haikuja </h2>
+    <hr>
+    {% for haiku in haikut %}
+    <i>Haiku:</i> {{ haiku[1] }}
+    <p>
+        <i>Arvosana:</i> {{ haiku[2] }}
+    <p>
+        <i>Genre:</i> {{ haiku[3] }}
+    <p>
+        <i>Sisältö: </i> {{haiku[5] }}
+        <hr>
+        {% endfor %}
+
+</body>
+
+</html>

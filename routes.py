@@ -7,9 +7,13 @@ import random
 
 @app.route("/")
 def index():
-
     return render_template("index.html")
-  
+
+@app.route("/arvosteltu", methods=["GET", "POST"])
+def arvota():
+    haikut.arvostele(request.form['rating'])
+    return render_template("index.html")
+
 
 @app.route("/login", methods=["GET", "POST"]) 
 def login():
@@ -23,7 +27,6 @@ def login():
         else:
             return render_template("error.html",message="Väärä tunnus tai salasana")
        
-
 @app.route("/logout")
 def logout():
     users.logout()
@@ -32,14 +35,15 @@ def logout():
 @app.route("/generoi")
 def generoi():
     list = haikut.generoi()
-    return render_template("startest.html", random=list)
-    #generoi korvattu startestillä testailun vuoksi
+    #id = list[0]
+    #haikut.visible(id)
+    return render_template("generoi.html", random=list)
+    
 
 @app.route("/haikut")
 def haiku():
     list = haikut.get_list()
     return render_template("haikut.html", haikut=list)
-
 
 @app.route("/new")
 def newhaiku():
@@ -67,3 +71,4 @@ def register():
             return redirect("/")
         else:
             return render_template("error.html",message="Rekisteröinti ei onnistunut")
+
