@@ -38,3 +38,14 @@ def visible(id2):
     sql = "INSERT INTO haikut (visible) VALUES (1) WHERE id = id2"
     db.session.execute(sql, {"id2":id2})
     db.session.commit()
+
+def get_namelist():
+
+    sql = "SELECT * FROM haikut ORDER BY nimi"
+    result = db.session.execute(sql)
+    return result.fetchall()
+
+def get_genre():
+    sql = "SELECT * FROM haikut ORDER BY genre"
+    result = db.session.execute(sql)
+    return result.fetchall()

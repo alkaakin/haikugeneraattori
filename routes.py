@@ -72,3 +72,12 @@ def register():
         else:
             return render_template("error.html",message="Rekisteröinti ei onnistunut")
 
+@app.route("/nimi", methods=["get","post"])
+def nimi():
+        list = haikut.get_namelist()
+        return render_template("haikut.html", haikut=list)
+
+@app.route("/genre", methods=["get","post"])
+def genre():
+        list = haikut.get_genre()
+        return render_template("haikut.html", haikut=list)

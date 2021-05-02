@@ -23,11 +23,42 @@
     h2 {
         color: navy;
         margin-left: 0px;
+        
+    } 
+
+    .options{
+        float: left;
+    }    
+
+    .frontpage{
+        float: right;
+    }
+
+
     }
 </style>
 
 <body>
-    <h2> Tarkastele haikuja </h2>
+
+    <h3> Järjestä:</h3>
+    <div class ="options">
+    <select name="valinta" id="arrange" onchange="location.href='/'+[value]">
+        <option value="nimi">Nimi</option>
+        <option value="paivamaara" onclick="/">Päivämäärä</option>
+        <option value="genre">Genre</option>
+        <option value="arvosana">Arvosana</option>
+      </select> 
+    </div>
+
+    <div class="frontpage">
+    <button type="button" onclick="location.href='/'"> Takaisin etusivulle </button>    
+
+    </div>
+
+    <hr>
+    <hr>
+    <p>
+    <h2> Tarkastele haikuja </h2></p>
     <hr>
     {% for haiku in haikut %}
     <i>Haiku:</i> {{ haiku[1] }}
@@ -39,6 +70,10 @@
         <i>Sisältö: </i> {{haiku[5] }}
         <hr>
         {% endfor %}
+
+
+    
+    
 
 </body>
 
