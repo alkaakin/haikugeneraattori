@@ -11,14 +11,15 @@ Tällä hetkellä sovelluksesta on herokussa versio, joka mahdollistaa seuraavat
 - Haikun kirjoittaminen sisäänkirjautuneena (tässä valitaan haikun nimi, genre ja sisältö)
 - Satunnaisen haikun generoiminen painamalla "HAIKU TIME"- nappia
 - Kaikkien haikujen tarkastelu erikseen listana
+- Mahdollisuus järjestää haikuja parametrien mukaan
 
 Sovellusta tullaan kehittämään seuraavilla tavoin seuraavaan kurssin deadlineen mennessä:
 
-- Eri käyttäjäryhmien luominen ja tunnistaminen
+- Tietoturvan parantaminen
 - Ulkoasun parantaminen 
 - Haikujen generoiminen suoraan etusivulle sen sijaan, että sovellus näyttää haikun erillisellä sivulla
-- Mahdollisuus arvostella (generoitua) haikua
-- Mahdollisuus hakea haikuja eri parametrien avulla ja järjestää haikujen listausta (esim. arvosanan mukaan)
+- Mahdollisuus arvostella (generoitua) haikua (tähtiominaisuus toimii tällä hetkellä)
+- Mahdollisuus hakea haikuja eri parametrien avulla 
 
 
 <b> TAVOITE SOVELLUKSELLE </b>
