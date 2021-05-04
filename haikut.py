@@ -9,8 +9,8 @@ def get_list():
 
 def send(nimi, genre, content):
     
-    sql = "INSERT INTO haikut (nimi,genre,content) VALUES (:nimi,:genre,:content)"
-    db.session.execute(sql, {"nimi":nimi, "genre":genre, "content":content})
+    sql = "INSERT INTO haikut (nimi,genre,content,arvosana) VALUES (:nimi,:genre,:content,:arvosana)"
+    db.session.execute(sql, {"nimi":nimi, "genre":genre, "content":content, "arvosana":'0'})
     db.session.commit()
     return True
 
@@ -47,5 +47,15 @@ def get_namelist():
 
 def get_genre():
     sql = "SELECT * FROM haikut ORDER BY genre"
+    result = db.session.execute(sql)
+    return result.fetchall()
+
+def get_rating():
+    sql = "SELECT * FROM haikut ORDER BY arvosana DESC"
+    result = db.session.execute(sql)
+    return result.fetchall()
+
+def get_date():
+    sql = "SELECT * FROM haikut ORDER BY id DESC"
     result = db.session.execute(sql)
     return result.fetchall()

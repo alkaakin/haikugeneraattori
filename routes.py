@@ -81,3 +81,13 @@ def nimi():
 def genre():
         list = haikut.get_genre()
         return render_template("haikut.html", haikut=list)
+
+@app.route("/rating", methods=["get","post"])
+def rating():
+        list = haikut.get_rating()
+        return render_template("haikut.html", haikut=list)
+
+@app.route("/date", methods=["get","post"])
+def date():
+        list = haikut.get_date()
+        return render_template("haikut.html", haikut=list)
