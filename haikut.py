@@ -11,8 +11,9 @@ def get_list():
 
 def send(nimi, genre, content):
     
-    sql = "INSERT INTO haikut (nimi,genre,content,arvosana) VALUES (:nimi,:genre,:content,:arvosana)"
-    db.session.execute(sql, {"nimi":nimi, "genre":genre, "content":content, "arvosana":'0'})
+    f = "f"
+    sql = "INSERT INTO haikut (nimi,genre,content,arvosana,active) VALUES (:nimi,:genre,:content,:arvosana,:f)"
+    db.session.execute(sql, {"nimi":nimi, "genre":genre, "content":content, "arvosana":'0', "f":f})
     db.session.commit()
     return True
 
@@ -66,7 +67,6 @@ def ratings():
     return new
     #tässä pitää hakea ao. updateCountista 
 
-
 def updateSum(arvosana):
     t = "t"
     sql = "SELECT sum FROM haikut WHERE active = :t"
@@ -85,7 +85,6 @@ def updateSum(arvosana):
     return update 
 
     #tässä pitää päivittää arvosteluiden yhteismäärä
-
 
 def get_namelist():
 
