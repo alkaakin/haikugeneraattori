@@ -40,7 +40,7 @@ def merkitse(lista):
 def arvostele(arvosana):
     
     avg = int(updateSum(arvosana)) / ratings()
-    avg = round(avg)
+    avg = round(avg, 2)
     f = "f"
     t = "t"
     sql = "UPDATE haikut SET arvosana = :avg, active = :f WHERE active = :t"
