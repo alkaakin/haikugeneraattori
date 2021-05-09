@@ -4,6 +4,7 @@ import haikut, users
 from os import getenv
 from flask import Flask, jsonify, abort, make_response, request, url_for
 import random
+from decimal import Decimal
 
 @app.route("/")
 def index():
@@ -11,7 +12,10 @@ def index():
 
 @app.route("/arvosteltu", methods=["GET", "POST"])
 def arvota():
-    haikut.arvostele(request.form['rating'])
+
+    #id = 
+    print(request.form['rating'])
+    haikut.arvostele(request.form['rating']) #tsekkaa github
     return render_template("index.html")
 
 
@@ -35,11 +39,8 @@ def logout():
 @app.route("/generoi")
 def generoi():
     list = haikut.generoi()
-    #id = list[0]
-    #haikut.visible(id)
     return render_template("generoi.html", random=list)
     
-
 @app.route("/haikut")
 def haiku():
     list = haikut.get_list()
@@ -90,4 +91,11 @@ def rating():
 @app.route("/date", methods=["get","post"])
 def date():
         list = haikut.get_date()
+        return render_template("haikut.html", haikut=list)
+
+@app.route("/delete", methods=["get","post"])
+def delete():
+        haiku = request.form["id"]
+        haikut.delete(haiku)
+        list = haikut.get_list()
         return render_template("haikut.html", haikut=list)
