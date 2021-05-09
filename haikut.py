@@ -15,7 +15,7 @@ def send(nimi, genre, content):
     ratings = 1
     summa = 3
     sql = "INSERT INTO haikut (nimi,genre,content,ratings,sum,arvosana,active) VALUES (:nimi,:genre,:content,:ratings,:summa,:arvosana,:f)"
-    db.session.execute(sql, {"nimi":nimi, "genre":genre, "content":content, "ratings":ratings, "summa":summa, "arvosana":'0', "f":f})
+    db.session.execute(sql, {"nimi":nimi, "genre":genre, "content":content, "ratings":ratings, "summa":summa, "arvosana":'3', "f":f})
     db.session.commit()
     return True
 
