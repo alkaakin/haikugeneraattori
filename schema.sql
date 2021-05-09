@@ -5,10 +5,12 @@ CREATE TABLE users (
 );
 
 CREATE TABLE haikut (
-    id INTEGER,
+    id SERIAL PRIMARY KEY,
     nimi TEXT,
-    arvosana INTEGER,
     genre TEXT,
-    visible INTEGER,
-    content TEXT
+    content TEXT,
+    ratings INTEGER,
+    active BOOLEAN,
+    sum INTEGER,
+    arvosana NUMERIC
 );
