@@ -45,6 +45,7 @@ def arvostele(arvosana):
     
     print(arvosana)
     avg = int(updateSum(arvosana)) / ratings()
+    avg = round(avg)
     f = "f"
     t = "t"
     print("tässä on keskiarvo" + str(avg))
