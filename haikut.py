@@ -12,8 +12,10 @@ def get_list():
 def send(nimi, genre, content):
     
     f = "f"
-    sql = "INSERT INTO haikut (nimi,genre,content,arvosana,active) VALUES (:nimi,:genre,:content,:arvosana,:f)"
-    db.session.execute(sql, {"nimi":nimi, "genre":genre, "content":content, "arvosana":'0', "f":f})
+    ratings = 1
+    summa = 3
+    sql = "INSERT INTO haikut (nimi,genre,content,ratings,sum,arvosana,active) VALUES (:nimi,:genre,:content,:ratings,:summa,:arvosana,:f)"
+    db.session.execute(sql, {"nimi":nimi, "genre":genre, "content":content, "ratings":ratings, "summa":summa, "arvosana":'0', "f":f})
     db.session.commit()
     return True
 
